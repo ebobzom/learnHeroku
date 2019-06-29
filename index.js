@@ -1,6 +1,6 @@
 const express = require('express');
 const pg = require('pg');
-const {client,pool} = require("pg");
+const {client,Pool} = require("pg");
 
 const app = express();
 
