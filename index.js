@@ -24,9 +24,10 @@ app.get('/', async (req,res) =>{
       }else{
         res.json(result)
         }
-      }
+      })
+
       pool.end()
-    })
+
 
 })
 
