@@ -11,8 +11,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.get('/', async (req,res) =>{
 
-    const connectionString = 'postgresql://dbuser:secretpassword@database.server.com:3211/mydb'
-
+    const connectionString = process.env.DATABASE_URL;
     const pool = new Pool({
       connectionString: connectionString,
     })
