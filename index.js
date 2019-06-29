@@ -16,8 +16,15 @@ app.get('/', async (req,res) =>{
       connectionString: connectionString,
     })
     
-    await pool.query('SELECT * FROM person', (err, res) => {
-      console.log(err, res)
+    await pool.query('SELECT * FROM person', (err, result) => {
+      if(err){
+        res.json({
+          msg: 'error'
+        })
+      }else{
+        res.json(result)
+        }
+      }
       pool.end()
     })
 
